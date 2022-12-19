@@ -2,45 +2,27 @@
   <div id="app">
     <div class="container">
       <div class="card-list">
-        <CardItem v-for="news in newsList" :key="news.id"
-          :cardTitle="news.title.rendered"
-          :cardContent="news.excerpt.rendered"
-          :cardImage="news._embedded['wp:featuredmedia'][0].source_url"
-          :cardDate="news.date"
-          :cardSlug="news.slug"
-        >
-        </CardItem>
+        <MarvelCharacters/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import CardItem from '../components/CardItem.vue';
+import MarvelCharacters from '@/components/marvel-characters.vue';
+
 
 export default {
   name: 'HomePage',
   components: {
-    CardItem
-  },
+    MarvelCharacters
+    },
   data() {
     return {
       newsList: []
     }
   },
-  methods : {
-    fetchNews() {
-      fetch('https://telegrafi.com/wp-json/wp/v2/posts?_embed=1')
-      .then(response => response.json())
-      .then(data => {
-        this.newsList = data;
-        console.log(this.newsList);
-      })
-    }
-  },
-  mounted() {
-    this.fetchNews();
-  }
+ 
 }
 </script>
 
