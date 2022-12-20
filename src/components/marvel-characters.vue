@@ -54,7 +54,15 @@ import { public_key } from '@/views/marvelCharacters';
     computed:{
         filteredCharacters: function(){
             return this.marvelCharacters.filter((marvelcharacter)=>{
+                if(marvelcharacter.name[0].toLowerCase() == this.search[0]){
                 return marvelcharacter.name.toLowerCase().match(this.search.toLowerCase());
+                }
+                else if (this.search == ""){
+                    return marvelcharacter.name
+                }
+                else{
+                    return ""
+                }
             })
         }
     }
