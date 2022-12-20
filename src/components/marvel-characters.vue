@@ -2,6 +2,7 @@
     <div>
         <h2>Welcome to Marvel Characters</h2>
         <input type="text" v-model="search" placeholder="Type marvel character">
+        <hr>
         <ul>
             <li v-for="marvelcharacter in filteredCharacters"  :key="marvelcharacter.id">
                 <router-link :to="{name: 'marvel-character', params: {id: marvelcharacter.id}}">{{ marvelcharacter.name }}</router-link>
@@ -16,6 +17,10 @@ li a{
 li{
     margin-top: 10px;
 } 
+input{
+    padding: 15px 30px;
+    margin-bottom: 30px;
+}
 </style>
 <script>
 import { public_key } from '@/views/marvelCharacters';

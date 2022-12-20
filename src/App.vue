@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <router-link to="/" class="a">Characters</router-link>
-    <router-link to="/comics" class="comics a">Comics</router-link>
+      <router-link to="/" class="a">Characters</router-link>
+      <router-link to="/comics" class="comics a">Comics</router-link>
 
     <router-view/>
   </div>
@@ -11,6 +11,9 @@
 #app {
   padding: 30px;
   padding-top:40px;
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 
@@ -23,7 +26,6 @@ nav a {
   color: black;
   font-weight: bolder;
 }
-
 
 
 .comics{

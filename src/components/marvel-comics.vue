@@ -4,7 +4,7 @@
     
         <ul>
             <li v-for="marvelComic in marvelComics" :key="marvelComic.id">
-            <router-link :to="{name: 'marvel-comic', params: {id: marvelComic.id}}">            {{ marvelComic.title }}
+            <router-link :to="{name: 'marvel-comic', params: {id: marvelComic.id}}">{{ marvelComic.title }}
 </router-link>
 
             </li>

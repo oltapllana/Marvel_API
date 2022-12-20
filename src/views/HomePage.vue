@@ -32,4 +32,9 @@ export default {
   img {
     object-fit:  cover !important;
   }
+  .container{
+    max-width: 1170px;
+    width: 100%;
+    margin: auto 0;
+  }
 </style>

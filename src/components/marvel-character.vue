@@ -3,17 +3,17 @@
     <div class="marvel">
         <div class="marvel__data">
             <!-- <p>{{ this.$route.params.id }}</p> -->
-            <h2 v-for="details in marvelCharacter" :key="details.id" :class="data__name">{{ details.name }}</h2>
-            <p v-for="details in marvelCharacter" :key="details.id" :class="description">{{ details.description }}</p>
+            <h2 v-for="details in marvelCharacter" :key="details.id">{{ details.name }}</h2>
+            <p v-for="details in marvelCharacter" :key="details.name">{{ details.description }}</p>
 
         </div>
         <div class="marvel__image"><img :src="url" alt=""></div>
     </div>
 </div>
 </template>
-<style>
+<style >
 *{
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
 }
 .container{
     max-width: 1170px;
