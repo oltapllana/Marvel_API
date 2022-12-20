@@ -1,6 +1,6 @@
 <template lang="html">
     <div>
-        <h3>helloksfjksf</h3>
+        <h2>Welcome to Marvel Characters</h2>
         <input type="text" v-model="search" placeholder="Type marvel character">
         <ul>
             <li v-for="marvelcharacter in filteredCharacters"  :key="marvelcharacter.id">
@@ -9,6 +9,14 @@
         </ul>
     </div>
 </template>
+<style>
+li a{
+    color: black;
+}
+li{
+    margin-top: 10px;
+} 
+</style>
 <script>
 import { public_key } from '@/views/marvelCharacters';
     export default{
@@ -38,15 +46,10 @@ import { public_key } from '@/views/marvelCharacters';
             });
         }
     },
-    created(){
-       this.$http.get('http://gateway.marvel.com/v1/public/characters').then(function(data){
-        this.marvelCharacters = data.body;
-       })
-    },
     computed:{
         filteredCharacters: function(){
             return this.marvelCharacters.filter((marvelcharacter)=>{
-                return marvelcharacter.name.match(this.search);
+                return marvelcharacter.name.toLowerCase().match(this.search.toLowerCase());
             })
         }
     }

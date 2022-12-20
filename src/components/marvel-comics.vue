@@ -1,11 +1,7 @@
 <template lang="html">
     <div>
         <h3>Hello comicssasas</h3>
-        <!-- <ul>
-            <li v-for="marvelcharacter in filteredCharacters"  :key="marvelcharacter.id">
-                <router-link :to="{name: 'marvel-character', params: {id: marvelcharacter.id}}">{{ marvelcharacter.name }}</router-link>
-            </li>
-        </ul> -->
+    
         <ul>
             <li v-for="marvelComic in marvelComics" :key="marvelComic.id">
             <router-link :to="{name: 'marvel-comic', params: {id: marvelComic.id}}">            {{ marvelComic.title }}

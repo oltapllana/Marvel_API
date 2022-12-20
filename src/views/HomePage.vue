@@ -16,13 +16,8 @@ export default {
   name: 'HomePage',
   components: {
     MarvelCharacters
-    },
-  data() {
-    return {
-      newsList: []
     }
-  },
- 
+
 }
 </script>
 
