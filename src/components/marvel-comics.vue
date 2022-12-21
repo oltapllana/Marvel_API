@@ -1,11 +1,13 @@
 <template lang="html">
     <div>
         
-        <h3>Hello comicssasas</h3>
+        <h3>Welcome to Marvel Comics</h3>
         <!-- <div v-if="isInfoPopupVisible"><marvelCom/></div>
         <div v-else> -->
+            <input type="text" v-model="search" placeholder="Type marvel comic">
+        <hr>
             <ul>
-            <li v-for="marvelComic in marvelComics" :key="marvelComic.id" >
+            <li v-for="marvelComic in filteredComics" :key="marvelComic.id" >
             <a href="#"  type="button" ><img src="../assets/comic.jpg" alt="">
                 {{ marvelComic.title }}<button :key="marvelComic.id"  @click="() => {TogglePopup('buttonTrigger')}">Show</button>
                 
@@ -43,8 +45,8 @@ export default{
         return {
             marvelComics: [],
             marvelComic: [],
-            url: '',
-            size: 'portrait_uncanny.jpg'
+            search: ""
+
         };
     },
     mounted() {
@@ -103,14 +105,33 @@ export default{
 			popupTriggers,
 			TogglePopup
 		}
-	}
+	},
+    computed:{
+        filteredComics: function(){
+            return this.marvelComics.filter((marvelComic)=>{
+                if(marvelComic.title[0].toLowerCase() == this.search[0]){
+                return marvelComic.title.toLowerCase().match(this.search.toLowerCase());
+                }
+                else if (this.search == ""){
+                    return marvelComic.title
+                }
+                else{
+                    return ""
+                }
+            })
+        }
+    }
 }
+
 </script>
 <style lang="css">
 #app {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
 	color: #2c3e50;
 	margin-top: 60px;
+}
+h3{
+    margin: 20px;
 }
 Popup{
     background: #000;
