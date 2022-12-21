@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-      <router-link to="/" class="a">Characters</router-link>
-      <router-link to="/comics" class="comics a">Comics</router-link>
+      <header>
+        <router-link to="/" class="a">Characters</router-link>
+        <router-link to="/comics" class="comics a">Comics</router-link>
+      </header>
 
     <router-view/>
   </div>
@@ -14,6 +16,12 @@
   max-width: 1170px;
   width: 100%;
   margin: 0 auto;
+  color: rgb(193, 27, 55);
+}
+header{
+  background-color: rgb(219, 10, 10);
+  padding: 10px;
+  border-radius: 10px;
 }
 
 
@@ -25,7 +33,10 @@ nav a {
 .a{
   color: black;
   font-weight: bolder;
+  color: white;
+
 }
+
 
 
 .comics{

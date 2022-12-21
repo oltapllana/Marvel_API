@@ -23,6 +23,7 @@
 .marvel{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin-top: 40px;
 }
 .marvel__image{
     display: flex;

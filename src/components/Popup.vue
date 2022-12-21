@@ -3,7 +3,7 @@
 		<div class="popup-inner">
 			<slot />
 			<button class="popup-close" @click="TogglePopup()">
-				Close Popup
+				Close
 			</button>
 		</div>
 	</div>
@@ -32,7 +32,7 @@ export default {
 	
 }
 .popup-inner {
-		background: #FFF;
+		background: rgb(188, 147, 147);
 		padding: 32px;
 	}
 </style>
