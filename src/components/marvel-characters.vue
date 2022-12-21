@@ -105,4 +105,10 @@ img{
     color: white;
 }
 }
+@media (min-width:768px)and (max-width: 1024px){
+    .parent ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
 </style>

@@ -139,5 +139,11 @@ button:hover{
         grid-template-columns: 1fr;
     }
 }
+@media (min-width:768px)and (max-width: 1024px){
+    ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
 
 </style>
