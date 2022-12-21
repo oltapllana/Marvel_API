@@ -97,4 +97,12 @@ button{
 img{
     margin: 10px;
 }
+@media (max-width: 767px){
+    .parent ul{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    color: white;
+}
+}
 </style>

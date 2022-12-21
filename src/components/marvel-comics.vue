@@ -126,6 +126,18 @@ ul li a{
 button{
     padding: 10px;
     margin: 10px;
+    font-size: 20px;
+}
+button:hover{
+    background: red;
+    color: white;
+    border-radius:  1px solid white;
+}
+@media (max-width: 767px){
+    ul{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
 }
 
 </style>
