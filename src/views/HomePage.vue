@@ -22,11 +22,11 @@ export default {
 
 <style>
   .card-list {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     padding-top: 60px;
-    padding-bottom: 60px;
+    padding-bottom: 60px; */
   }
   img {
     object-fit:  cover !important;

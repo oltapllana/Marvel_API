@@ -1,57 +1,46 @@
 <template lang="html">
-        <div class="v-popup">
-            <div class="v-popup__header">
-                <span>Popup span</span>
-                <span>
-                    <i class="material-icons"></i>
-                </span>
-            </div>
-            <div class="v-popup__content">
-                <slot></slot>
-            </div>
-            <div class="v-popup__footer">
-                <button class="close" >Close</button>
-                <button class="submit">Add</button>
-            </div>
-        </div>
+       <div>
+        <h2 v-for="details in marvelCharacter" :key="details.id">{{ details.name }}</h2>
+            <p v-for="details in marvelCharacter" :key="details.name">{{ details.description }}</p>
+
+       </div>
         <!-- <img :src="url" alt=""> -->
     </template>
     <script>
-    // import { public_key } from '@/views/marvelCharacters';
+    import { public_key } from '@/views/marvelCharacters';
+    import { public_key } from '@/views/marvelCharacters';
 
     export default{
-        name: 'marvel-comic'
-    }
-    // data(){
-    //     return{
-    //         marvelComics: [],
-    //         url: '',
-    //         size: 'portrait_uncanny.jpg'
-    //     }
-    // },
-    // mounted(){
-    //     this.getMarvelComics()
-    // },
-       
-    // methods: {
-    //     getMarvelComics: function () {
-    //         var characterID = this.$route.params.id
-    //         fetch(`http://gateway.marvel.com/v1/public/comics/${characterID}?apikey=${public_key}`)
-    //             .then(response => response.json())
-    //             .then((result) => {
-    //             result.data.results.forEach((item)=>{
-    //                 this.marvelComics.push(item)
-    //                 this.url = `${item.thumbnail.path}`
-    //                 console.log(this.url);
+        name: 'marvel-character',
+    data(){
+        return{
+            marvelCharacter: [],
+            url: '',
+            size: 'portrait_uncanny.jpg'
+        }
+    },
+    mounted(){
+        this.getMarvelCharacters()
+    },
+    methods: {
+        getMarvelCharacters: function () {
+            var characterID = this.$route.params.id
+            fetch(`http://gateway.marvel.com/v1/public/characters/${characterID}?apikey=${public_key}`)
+                .then(response => response.json())
+                .then((result) => {
+                result.data.results.forEach((item)=>{
+                    this.marvelCharacter.push(item)
+                    this.url = `${item.thumbnail.path}/${this.size}`
+                    console.log(this.url);
 
-    //             })
-    //         })
-    //             .catch((error) => {
-    //             console.log(error);
-    //         });
-    //     }
-    // }
-    // }
+                })
+            })
+                .catch((error) => {
+                console.log(error);
+            });
+        }
+    }
+}
     </script>
 <style>
 .v-popup{

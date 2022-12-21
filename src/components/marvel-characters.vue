@@ -3,16 +3,26 @@
         <h2>Welcome to Marvel Characters</h2>
         <input type="text" v-model="search" placeholder="Type marvel character">
         <hr>
-        <ul>
-            <li v-for="marvelcharacter in filteredCharacters"  :key="marvelcharacter.id">
-                <router-link :to="{name: 'marvel-character', params: {id: marvelcharacter.id}}">{{ marvelcharacter.name }}</router-link>
-            </li>
-        </ul>
+        <div class="parent ">
+            <ul>
+                <li v-for="marvelcharacter in filteredCharacters"  :key="marvelcharacter.id">
+                    <router-link :to="{name: 'marvel-character', params: {id: marvelcharacter.id}}"><img src="../assets/marvel.jpg" alt="">
+                        {{ marvelcharacter.name }}
+                        <button>Show more</button>
+                     </router-link>
+                </li>
+            </ul>
+        </div>
     </div>
 </template>
 <style>
 li a{
     color: black;
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 li{
     margin-top: 10px;
@@ -71,5 +81,20 @@ import { public_key } from '@/views/marvelCharacters';
 </script>
 
 <style lang="css">
-
+.parent ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    color: white;
+}
+button{
+    background: white;
+    color: black;
+    border: 1px black solid;
+    padding: 10px;
+    border-radius: 20px;
+}
+img{
+    margin: 10px;
+}
 </style>
